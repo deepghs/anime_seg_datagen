@@ -1,0 +1,14 @@
+datasets
+torch<2
+numpy
+torchvision
+scipy
+python-opencv
+scikit-learn
+scikit-image
+pandas
+matplotlib
+tqdm
+dghs-imgutils>=0.1.0
+hbutils>=0.9.1
+pillow
