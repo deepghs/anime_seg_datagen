@@ -22,7 +22,7 @@ class _DatasetCombine(Dataset):
 
         current = 0
         for item, size in zip(self.ds, self._sizes):
-            if current + size >= index:
+            if current + size > index:
                 return self._postprocess(index, item[int(index - current)])
 
             current += size

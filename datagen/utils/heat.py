@@ -8,7 +8,7 @@ from imgutils.detect import detect_faces
 def ch_heatmap(image: Image.Image, coef: float = 0.45, must_threshold: float = 0.85,
                r_max=1.0, r_min=0.15, p_min=0.3, p_max=4.0) -> Tuple[np.ndarray, np.ndarray]:
     alphas = np.array(image.convert('RGBA'))[:, :, 3].astype(float) / 255.0
-    faces = detect_faces(image)
+    faces = detect_faces(image, )
     assert len(faces) > 0, f'At least one face should be detected, but not found - {image!r}.'
     (x0, y0, x1, y1), _, _ = faces[0]
 

@@ -24,6 +24,7 @@ def character_layout(image: Image.Image, layout_ratio: float, char_ratio: float,
     x_y0, x_y1 = x_ys.min(), x_ys.max()
 
     p_size = int(((image.width * image.height) / layout_ratio * 2) ** 0.5)
+    p_size = max(p_size, int(image.width / layout_ratio), int(image.height / layout_ratio))
     p_image = Image.fromarray(np.zeros((p_size, p_size, 4), dtype=np.uint8), mode='RGBA')
     left, top = (p_size - image.width) // 2, (p_size - image.height) // 2
     p_image.paste(image, (left, top, left + image.width, top + image.height), mask=image)
